@@ -1,4 +1,5 @@
-### 
+### scaffold
+
 * add .gitignore
 * add README
 * npm init
@@ -11,10 +12,11 @@
 * add eslintrc and eslintignore
 
 ### boilerplate
+
 * create index.html
 * create main.js
-* create app.js
-* create main.scss
-* create util.js
+* create app/index.js
+* create sass tree
+* create util.js > log, logError, renderIf, classToggler
 
 ## add store

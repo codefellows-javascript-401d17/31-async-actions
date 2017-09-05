@@ -4,6 +4,8 @@
   "description": "![cf](https://i.imgur.com/7v5ASc8.png) 31: Async Actions ======",
   "main": "index.js",
   "scripts": {
+    "watch": "webpack-dev-server --inline --hot",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,0 +1,46 @@
+import superagent from 'superagent';
+
+export const brewerySet = (breweries) => ({
+  type: 'BREWERY_SET',
+  payload: breweries
+})
+
+export const breweryCreate = (brewery) => ({
+  type: 'BREWERY_CREATE',
+  payload: brewery
+})
+
+export const breweryUpdate = (brewery) => ({
+  type: 'BREWERY_UPDATE',
+  payload: brewery
+})
+
+export const breweryDelete = (brewery) => ({
+  type; 'BREWERY_DELETE',
+  payload: brewery
+})
+
+export const breweriesFetchRequest = () => (dispatch) => {
+  return superagent.get(`${__API_URL__}/api/brewery`)
+  .then(res => {
+    dispatch(brewerySet(res.body));
+    return res;
+  })
+}
+
+export const breweryCreateRequest = (brewery) => (dispatch) => {
+  return superagent.post(`${__API_URL__}/api/brewery`)
+  .send(brewery)
+  .then(res => {
+    dispatch(breweryCreate(res.body));
+    return res;
+  })
+}
+
+export const breweryDeleteRequest = (brewery) => (dispatch) => {
+  return superagent.delete(`${__API_URL__}/api/brewery/${brewery._id}`)
+  .then(res => {
+    dispatch(listDelete(brewery));
+    return res;
+  })
+} ;

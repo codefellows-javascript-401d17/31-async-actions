@@ -13,7 +13,7 @@ let plugins = [
   new EnvironmentPlugin(['NODE_ENV']),
   new ExtractPlugin('bundle-[hash].css'),
   new HtmlPlugin({template: `${__dirname}/src/index.html`}),
-  DefinePlugin({
+  new DefinePlugin({
     __DEBUG__: JSON.stringify(!production),
     __API_URL__: JSON.stringify(process.env.API_URL)
   })
@@ -32,7 +32,7 @@ module.exports = {
   plugins,
   output: {
     path: `${__dirname}/build`,
-    output: 'bundle-[hash].js',
+    filename: 'bundle-[hash].js',
     publicPath: process.env.CDN_URL
   },
   module: {

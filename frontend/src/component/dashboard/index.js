@@ -30,3 +30,13 @@ class Dashboard extends React.Component {
     )
   }
 }
+
+let mapStateToProps = (state) => ({ breweries: state.breweries});
+
+let mapDispatchToProps = (dispatch) => ({
+  breweryCreate: (brewery) => dispatch(breweryActions.breweryCreateRequest(brewery)),
+  breweryDelete: (brewery) => dispatch(breweryActions.breweryDeleteRequest(brewery)),
+  breweriesFetch: () => dispatch(breweryActions.breweriesFetchRequest())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)

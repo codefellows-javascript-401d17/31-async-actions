@@ -20,3 +20,8 @@
 * create util.js > log, logError, renderIf, classToggler
 
 ## add store
+
+* create middleware
+* create app reducer
+* add store to App component
+* create appStoreCreate

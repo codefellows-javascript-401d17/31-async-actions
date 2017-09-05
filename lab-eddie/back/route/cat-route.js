@@ -15,3 +15,22 @@ catRouter.post('/api/category', jsonParser, function(req, res, next) {
   .then(category => res.json(category))
   .catch(err => next(createError(400, err)));
 });
+
+catRouter.get('/api/category/:id', function(req, res, next) {
+  debug('GET /api/category');
+
+  Category.findById(req.params.id)
+  .then(category => res.json(category))
+  .catch(err => next(createError(404, err)));
+});
+
+catRouter.delete('/api/category/:id', function(req, res, next) {
+  debug('DELETE /api/category/id');
+
+  Category.findByIdAndRemove(req.params.id)
+  .then(() => {
+    res.status(204);
+    res.send({});
+  })
+  .catch(err => next(createError(404, err)));
+});

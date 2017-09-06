@@ -5,24 +5,9 @@ import CategoryForm from '../cat-form';
 
 
 class Dashboard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.deleteCat = this.deleteCat.bind(this);
-  }
 
-  deleteCat(cat) {
-    let result = this.props.deleteCategory(cat)
-
-    if(result instanceof Promise) {
-      result.then(() => this.setState({error: null}))
-      .catch(error => {
-        this.setState({error})
-      })
-    }
-  }
   componentWillMount() {
     this.props.fetchAllCats()
-
   }
   render() {
     return(
@@ -37,7 +22,7 @@ class Dashboard extends React.Component {
           {this.props.category.map(cat => {
             return(
               <li key={cat.id}>
-                <button onClick={() => this.deleteCat(cat)}>X</button>
+                <button onClick={() => this.props.deleteCategory(cat)}>X</button>
                 <h3>{cat.title}</h3>
                 <p>{cat.budget}</p>
                 <CategoryForm

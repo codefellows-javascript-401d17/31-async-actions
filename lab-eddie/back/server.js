@@ -13,8 +13,8 @@ const MONGODB_URI = 'mongodb://localhost/react';
 mongoose.connect(MONGODB_URI);
 
 const catRouter = require('./route/cat-route.js');
-app.use(cors);
 app.use(morgan('dev'));
+app.use(cors());
 app.use(catRouter);
 
 app.listen(PORT, () => {

@@ -10,7 +10,7 @@ const catRouter = module.exports = new Router();
 
 catRouter.post('/api/category', jsonParser, function(req, res, next) {
   debug('POST /api/category');
-
+  
   new Category(req.body).save()
   .then(category => res.json(category))
   .catch(err => next(createError(400, err)));

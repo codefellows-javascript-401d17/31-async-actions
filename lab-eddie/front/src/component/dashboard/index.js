@@ -19,9 +19,9 @@ class Dashboard extends React.Component {
           buttonText='Create Category'
         />
         <ul>
-          {this.props.category.map(cat => {
+          {this.props.category.map((cat, ind) => {
             return(
-              <li key={cat.id}>
+              <li key={cat._id}>
                 <button onClick={() => this.props.deleteCategory(cat)}>X</button>
                 <h3>{cat.title}</h3>
                 <p>{cat.budget}</p>

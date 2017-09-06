@@ -21,8 +21,15 @@
 
 ## add store
 
-* create app reducers
+* create blank app reducer
 * create combineReducer
 * create middleware
 * create appStoreCreate
 * add store to App component
+
+## add app state logic
+
+* add reducer for app state
+* add action creator for reducer
+
+

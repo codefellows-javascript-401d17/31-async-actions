@@ -48,7 +48,7 @@ export const createCatRequest = cat => dispatch => {
 }
 
 export const updateCatRequest = cat => dispatch => {
-  return superagent.put(`${__API_URL__}/api/category/${cat.id}`)
+  return superagent.put(`${__API_URL__}/api/category/${cat._id}`)
   .send(cat)
   .then(res => {
     dispatch(categoryUpdate(res.body));
@@ -57,9 +57,9 @@ export const updateCatRequest = cat => dispatch => {
 }
 
 export const deleteCatRequest = cat => dispatch => {
-  return superagent.delete(`${__API_URL__}/api/category/${cat.id}`)
+  return superagent.delete(`${__API_URL__}/api/category/${cat._id}`)
   .then(res => {
-    dispatch(categoryUpdate(cat));
+    dispatch(categoryDelete(cat));
     return res;
   })
 }

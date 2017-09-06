@@ -5,7 +5,7 @@ class CategoryForm extends React.Component {
     super(props);
     this.state = this.props.category || {title: '', budget: 0};
     this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   componentWillReceiveProps(props) {
@@ -32,9 +32,15 @@ class CategoryForm extends React.Component {
   }
 
   render() {
-    let {title, budget} = this.props.category;
-    !title ? title = this.props.firstPlace : null;
-    !budget ? budget = this.props.secondPlace : null;
+    var title, budget;
+    if(this.props.category) {
+      title = this.props.title;
+      budget = this.props.budget
+    } else {
+      title =this.props.firstPlace;
+      budget = this.props.secondPlace;
+    }
+
     return (
       <form onSubmit={this.onSubmit}>
         <input

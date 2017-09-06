@@ -22,7 +22,7 @@ class Dashboard extends React.Component {
           <div key={list._id}>
             <p>{list.title}</p>
             <button
-              onClick={() => this.props.listdelete(list)}>
+              onClick={() => this.props.listDelete(list)}>
               delete
             </button>
           </div>

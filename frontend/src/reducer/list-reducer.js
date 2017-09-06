@@ -25,7 +25,7 @@ export default (state=[], action) => {
 
     case 'LIST_DELETE':
       validateList(payload);
-      return state.filter( item => item._id !== payload.id)
+      return state.filter( item => item._id !== payload._id)
 
     default:
       return state;

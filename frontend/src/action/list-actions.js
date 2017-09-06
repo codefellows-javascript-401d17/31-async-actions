@@ -40,7 +40,7 @@ export const listCreateRequest = (list) => (dispatch) => {
 export const listDeleteRequest = (list) => (dispatch) => {
   return superagent.delete(`${__API_URL__}/api/lists/${list._id}`)
   .then(response => {
-    dispatch(listdelete(list));
+    dispatch(listDelete(list));
     return response;
   });
 }

@@ -24,7 +24,6 @@ export const breweriesFetchRequest = () => (dispatch) => {
   console.log(`${__API_URL__}/api/brewery`);
   return superagent.get(`${__API_URL__}/api/brewery`)
   .then(res => {
-    console.log('RES',res.body);
     dispatch(brewerySet(res.body));
     return res;
   })
@@ -34,7 +33,6 @@ export const breweryCreateRequest = (brewery) => (dispatch) => {
   return superagent.post(`${__API_URL__}/api/brewery`)
   .send(brewery)
   .then(res => {
-    console.log(res.body);
     dispatch(breweryCreate(res.body));
     return res;
   })

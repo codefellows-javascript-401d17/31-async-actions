@@ -103,7 +103,6 @@ describe('Brewery Routes', function() {
         request.get(`${url}/api/brewery/${this.tempBrewery._id}`)
         .end( (err, res) => {
           if(err) return done(err);
-          console.log('&&&&&&&&&&&&&&&&&&', res.body);
           expect(res.status).to.equal(200);
           expect(res.body.name).to.equal('the brewery name');
           expect(res.body.address).to.equal('the address');

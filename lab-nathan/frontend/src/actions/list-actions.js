@@ -20,29 +20,36 @@ export const listDelete = (list) => ({
   payload: list
 })
 
-export const listsClear = () => ({
-  type: 'LISTS_CLEAR',
-  payload: null
-})
-
-export const listsFetchRemote = () => {
+export const listsFetchRequest = () => (dispatch) => {
   return superagent.get(`${__API_URL__}/api/lists`)
-  .then(response => Promise.resolve(response));
+  .then(res => {
+    dispatch(listSet(res.body));
+    return res;
+  });
 }
 
-export const listCreateRemote = (list) => {
+export const listCreateRequest = (list) => (dispatch) => {
   return superagent.post(`${__API_URL__}/api/lists`)
   .send(list)
-  .then(response => Promise.resolve(response));
+  .then(res => {
+    dispatch(listCreate(res.body));
+    return res;
+  })
 }
 
-export const listUpdateRemote = (list) => {
+export const listUpdateRequest = (list) => (dispatch) => {
   return superagent.put(`${__API_URL__}/api/lists`)
   .send(list)
-  .then(response => Promise.resolve(response));
+  .then( res => {
+    dispatch(listUpdate(res.body));
+    return res;
+  })
 }
 
-export const listDeleteRemote = (list) => {
+export const listDeleteRequest = (list) => (dispatch) => {
   return superagent.delete(`${__API_URL__}/api/lists/${list._id}`)
-  .then(response => Promise.resolve(list));
+  .then(res => {
+    dispatch(listDelete(list))
+    return res;
+  })
 }

@@ -71,4 +71,4 @@ class BreweryForm extends React.Component {
   }
 }
 
-export default BreweryFrom
+export default BreweryForm

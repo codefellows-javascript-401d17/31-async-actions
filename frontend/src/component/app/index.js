@@ -10,13 +10,13 @@ class App extends React.Component {
   render() {
     return (
       <main className='app'>
-        <provider store={store}>
+        <Provider store={store}>
           <BrowserRouter>
             <section>
-              <Route exact path='/' component={Dashboard}>
+              <Route exact path='/' component={Dashboard}/>
             </section>
           </BrowserRouter>
-        </provider>
+        </Provider>
       </main>
     )
   }

@@ -26,17 +26,10 @@ breweryRouter.get('/api/brewery/:id', function(req, res, next){
 
 
 breweryRouter.get('/api/brewery', function(req, res, next) {
-  console.log('hit /api/lists')
+  debug('GET: /api/brewery')
 
-  let pageNumber = Number(req.query.page)
-  if(!pageNumber || pageNumber < 1) pageNumber = 1;
-  pageNumber--;
-
-  List.find({})
-  .sort({title: 'asc'})
-  .skip(pageNumber * 50)
-  .limit(50)
-  .then(lists => res.json(lists))
+  Brewery.find({})
+  .then(brewery => res.json(brewery))
   .catch(next)
 })
 

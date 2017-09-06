@@ -1,4 +1,4 @@
 import {combineReducers} from 'redux';
-import Breweries from './brewery.js';
+import breweries from './brewery.js';
 
 export default combineReducers({ breweries });

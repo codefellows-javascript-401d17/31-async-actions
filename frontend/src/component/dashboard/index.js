@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import BreweryFrom from '../brewery-from';
+import BreweryFrom from '../brewery-form';
 import * as util from '../../lib/util.js';
 import * as breweryActions from '../../action/brewery-actions.js'
 
@@ -10,6 +10,7 @@ class Dashboard extends React.Component {
   }
 
   render() {
+    console.log('***********',this.props);
     return (
       <div className='dashboard'>
         <h2>brewery app</h2>
@@ -18,7 +19,7 @@ class Dashboard extends React.Component {
           buttonText='create brewery' />
 
         {this.props.breweries.map( brewery =>
-          <div key={list._id}>
+          <div key={brewery._id}>
             <h1>{brewery.name}</h1>
             <p>{brewery.address}</p>
             <p>{brewery.phoneNumber}</p>

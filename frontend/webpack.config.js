@@ -2,7 +2,7 @@
 
 //TODO: change this...
 //since not .env but .dev.env, must pass in path option to config
-require('dotenv').config({ path: `${__dirname}/.dev.env` });
+require('dotenv').config();
 //see DefinePlugin (this line for production)
 const production = process.env.NODE_ENV === 'production';
 
@@ -20,7 +20,8 @@ let plugins = [
   new HtmlPlugin({ template: `${__dirname}/src/index.html` }),
   //env vars as webpack constant
   new DefinePlugin({
-    __DEBUG__: JSON.stringify(!production)
+    __DEBUG__: JSON.stringify(!production),
+    __API_URL__: JSON.stringify(process.env.API_URL)
   })
 ]
 

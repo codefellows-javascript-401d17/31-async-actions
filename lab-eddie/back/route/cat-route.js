@@ -16,10 +16,18 @@ catRouter.post('/api/category', jsonParser, function(req, res, next) {
   .catch(err => next(createError(400, err)));
 });
 
-catRouter.get('/api/category/:id', function(req, res, next) {
+catRouter.get('/api/category/', function(req, res, next) {
   debug('GET /api/category');
 
-  Category.findById(req.params.id)
+  Category.find({})
+  .then(category => res.json(category))
+  .catch(err => next(createError(404, err)));
+});
+
+catRouter.put('/api/category/:id', jsonParser, function(req, res, next) {
+  debug('PUT /api/category/id');
+
+  Category.findByIdAndUpdate(req.params.id, req.body, {new: true})
   .then(category => res.json(category))
   .catch(err => next(createError(404, err)));
 });

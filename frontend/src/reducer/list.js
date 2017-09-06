@@ -12,6 +12,7 @@ export default (state=[], action) => {
 
   switch(type) {
     case 'LIST_SET':
+      console.log('list set', payload);
       return payload
     case 'LIST_CREATE':
       validateList(payload);

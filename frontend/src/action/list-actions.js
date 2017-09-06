@@ -22,8 +22,10 @@ export const listDelete = (list) => ({
 
 //talks to API
 export const listsFetchRequest = () => (dispatch) => {
+
   return superagent.get(`${__API_URL__}/api/lists`)
   .then(res => {
+    console.log('fetched lists', res.body)
     dispatch(listSet(res.body));
     return res;
   });

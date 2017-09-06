@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import appStoreCreate from '../../lib/app-create-store';
+import Dashboard from '../dashboard/'
 
 const store = appStoreCreate();
 
@@ -12,7 +13,7 @@ class App extends React.Component {
         <Provider store={store}>
           <BrowserRouter>
             <main>
-              <h1>cool beans</h1>
+              <Route exact path='/' component={Dashboard} />
             </main>
 
           </BrowserRouter>

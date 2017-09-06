@@ -31,5 +31,7 @@
 
 * add reducer for app state
 * add action creator for reducer
+* add ui for this action creator
+* repeat
 
 

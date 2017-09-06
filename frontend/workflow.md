@@ -21,7 +21,7 @@
 
 ## add store
 
-* create middleware
 * create app reducer
+* create middleware
 * add store to App component
 * create appStoreCreate

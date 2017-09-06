@@ -29,3 +29,10 @@ class Dashboard extends React.Component {
 }
 
 let mapStateToProps = (state) => ({ lists: state.lists });
+let mapDispatchToProps = (dispatch) => ({
+  listCreate: (list) => dispatch(listActions.listCreateRequest(list)),
+  listDelete: (list) => dispatch(listActions.listDeleteRequest(list)),
+  listsFetch: () => dispatch(listActions.listsFetchRequest())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

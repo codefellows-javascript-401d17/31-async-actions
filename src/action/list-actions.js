@@ -38,7 +38,7 @@ export const listCreateRequest = (list) => (dispatch) => {
 }
 
 export const listDeleteRequest = (list) => (dispatch) => {
-  return superagent.delete(`${__API_URL__}/api/list/${list._id}`)
+  return superagent.delete(`${__API_URL__}/api/lists/${list._id}`)
   .then( res => {
     dispatch(listDelete(list))
     return res;

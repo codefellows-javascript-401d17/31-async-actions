@@ -20,7 +20,7 @@ export default (state = [], action) => {
     }
     case 'LIST_UPDATE': {
       validateList(payload);
-      return state.map(item => item._id === payload.id ? payload : item);
+      return state.map(item => item._id === payload._id ? payload : item);
     }
     case 'LIST_DELETE': {
       return state.filter(item => item._id !== payload._id);

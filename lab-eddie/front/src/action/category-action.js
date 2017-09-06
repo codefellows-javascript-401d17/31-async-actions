@@ -1,29 +1,39 @@
 import superagent from 'superagent';
 
 export const categorySet = (cats) => {
-  type: 'CATEGORY_SET',
-  payload: cats
+  return {
+    type: 'CATEGORY_SET',
+    payload: cats
+  }
 }
 
 export const categoryCreate = (cat) => {
-  type: 'CATEGORY_CREATE',
-  payload: cat
+  return {
+    type: 'CATEGORY_CREATE',
+    payload: cat
+  }
 }
 
 export const categoryUpdate = (cat) => {
-  type: 'CATEGORY_UPDATE',
-  payload: cat
+  return {
+    type: 'CATEGORY_UPDATE',
+    payload: cat
+  }
 }
 
 export const categoryDelete = (cat) => {
-  type: 'CATEGORY_DELETE',
-  payload: cat
+  return {
+    type: 'CATEGORY_DELETE',
+    payload: cat
+  }
 }
 
 export const fetchAllCats = () => (dispatch) => {
+  console.log(`${__API_URL__}/api/category`);
   return superagent.get(`${__API_URL__}/api/category`)
   .then(res => {
     dispatch(categorySet(res.body));
+    console.log(res);
     return res;
   })
 }

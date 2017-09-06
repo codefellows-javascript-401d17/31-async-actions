@@ -1,0 +1,20 @@
+{
+  "name": "31-async-actions",
+  "version": "1.0.0",
+  "description": "![cf](https://i.imgur.com/7v5ASc8.png) 31: Async Actions ======",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Loaye/31-async-actions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Loaye/31-async-actions/issues"
+  },
+  "homepage": "https://github.com/Loaye/31-async-actions#readme"
+}

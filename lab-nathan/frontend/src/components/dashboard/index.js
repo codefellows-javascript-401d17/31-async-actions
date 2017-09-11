@@ -29,18 +29,9 @@ let mapStateToProps = (state) => ({
 });
 
 let mapDispatchToProps = (dispatch) => ({
-  listCreate: (list) => {
-    listActions.listCreateRequest(list)
-    .then(response => dispatch(listActions.listCreate(response.body)))
-  },
-  listDelete: (list) => {
-    listActions.listDeleteRequest(list)
-    .then(response => dispatch(listActions.listDelete(response.body)))
-  },
-  listsFetch: (list) => {
-    listActions.listsFetchRequest()
-    .then(response => dispatch(listActions.listsFetch(response.body)))
-  }
+  listCreate: (list) => dispatch(listActions.listCreateRequest(list)),
+  listDelete: (list) => dispatch(listActions.listDeleteRequest(list)),
+  listsFetch: (list) => dispatch(listActions.listsFetchRequest())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

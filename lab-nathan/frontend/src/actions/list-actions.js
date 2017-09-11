@@ -35,6 +35,7 @@ export const listCreateRequest = (list) => (dispatch) => {
     dispatch(listCreate(res.body));
     return res;
   })
+  .catch(console.error);
 }
 
 export const listUpdateRequest = (list) => (dispatch) => {
@@ -44,6 +45,7 @@ export const listUpdateRequest = (list) => (dispatch) => {
     dispatch(listUpdate(res.body));
     return res;
   })
+  .catch(console.error);
 }
 
 export const listDeleteRequest = (list) => (dispatch) => {
@@ -52,4 +54,5 @@ export const listDeleteRequest = (list) => (dispatch) => {
     dispatch(listDelete(list))
     return res;
   })
+  .catch(console.error);
 }
